@@ -11,5 +11,5 @@ export class CreateUserDto {
   readonly instagram?: string;
   readonly facebook?: string;
   readonly web?: string;
-  readonly clave: string;
+  readonly password: string;
 }

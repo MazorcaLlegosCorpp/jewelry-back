@@ -56,13 +56,13 @@ export class User {
   web: string;
 
   @Column({ length: 255, nullable: false })
-  clave: string;
+  password: string;
 
   @BeforeInsert()
   @BeforeUpdate()
   async hashPassword() {
-    if (this.clave) {
-      this.clave = await bcrypt.hash(this.clave, 10);
+    if (this.password) {
+      this.password = await bcrypt.hash(this.password, 10);
     }
   }
 }
