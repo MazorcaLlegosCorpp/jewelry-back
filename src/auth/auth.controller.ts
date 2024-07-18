@@ -11,11 +11,11 @@ export class AuthController {
   @UseGuards(LocalAuthGuard)
   @Post('login')
   async login(@Body() userObject: LoginAuthDto) {
-    return this.authService.login(userObject);
+    return this.authService.logIn(userObject);
   }
 
   @Post('register')
   register(@Body() userObject: RegisterAuthDto) {
-    return this.authService.register(userObject);
+    return this.authService.signIn(userObject);
   }
 }
